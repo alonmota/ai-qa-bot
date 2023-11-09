@@ -36,12 +36,10 @@ export default class AskAi extends Command {
 	async run(): Promise<void> {
     const {args} = await this.parse(AskAi)
 
-    this.log(args.question)
 		const {openApiKey} = await getEnv()
 
 
 		const files = await this.readFiles()
-		// this.log(JSON.stringify(files))
 		const textSplitter = new RecursiveCharacterTextSplitter({ chunkSize: 1000 });
 		const docs = await textSplitter.createDocuments(files);
 		
@@ -60,14 +58,22 @@ export default class AskAi extends Command {
 
 		
 		// Create a system & human prompt for the chat model
-		const SYSTEM_TEMPLATE = `Use the following pieces of context to answer the users question.
-		If you don't know the answer, just say that you don't know, don't try to make up an answer.
-		----------------
-		{context}`;
+		const SYSTEM_TEMPLATE = `Use the following context to answer the question.
+		If the answer is not on the context, say you don't know. 
+		
+		""" context
+		{context}
+		"""
+		`;
+
+		const QUESTION_TEMPLATE = `
+		""" question
+		{question}
+		"""`
 
 		const messages = [
 			SystemMessagePromptTemplate.fromTemplate(SYSTEM_TEMPLATE),
-			HumanMessagePromptTemplate.fromTemplate("{question}"),
+			HumanMessagePromptTemplate.fromTemplate(QUESTION_TEMPLATE),
 		];
 		const prompt = ChatPromptTemplate.fromMessages(messages);
 
@@ -96,6 +102,6 @@ export default class AskAi extends Command {
 		const res = await chain.invoke({
 			question: args.question,
 		});
-		this.log(JSON.stringify(res, null, 2));
+		this.log(JSON.stringify(res.result, null, 2));
   }
 }

@@ -1,7 +1,7 @@
 {
   "author": "alonmota @alonmota",
   "bin": {
-    "bot": "./bin/run.js"
+    "bot": "bin/run.js"
   },
   "dependencies": {
     "@oclif/core": "^3",
@@ -41,8 +41,8 @@
   ],
   "homepage": "https://github.com/alonmota/ai-qa-bot",
   "license": "MIT",
-  "main": "",
-  "name": "ai-qa-bot",
+  "main": "index.js",
+  "name": "@alonmota/ai-qa-bot",
   "oclif": {
     "bin": "bot",
     "dirname": "bot",
@@ -58,7 +58,10 @@
       }
     }
   },
-  "repository": "alonmota/ai-qa-bot",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alonmota/ai-qa-bot.git"
+  },
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint . --ext .ts",
@@ -69,7 +72,9 @@
     "version": "oclif readme && git add README.md"
   },
   "version": "0.0.0",
-  "bugs": "https://github.com/alonmota/ai-qa-bot/issues",
+  "bugs": {
+    "url": "https://github.com/alonmota/ai-qa-bot/issues"
+  },
   "keywords": [
     "oclif"
   ],

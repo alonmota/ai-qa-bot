@@ -1,18 +1,20 @@
 {
-  "author": "alonmota @alonmota",
+	"name": "@alonmota/ai-qa-bot",
+  "version": "0.0.0",
+  "description": "AI bot that answer questions about documents",
+  "author": "Alon Mota @alonmota",
+  "homepage": "https://github.com/alonmota/ai-qa-bot",
   "bin": {
     "bot": "bin/run.js"
   },
   "dependencies": {
     "@oclif/core": "^3",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^3.9.4",
     "class-transformer-validator": "^0.9.1",
     "class-validator": "^0.14.0",
     "hnswlib-node": "^1.4.2",
     "langchain": "^0.0.177"
   },
-  "description": "AI bot that answer questions about documents",
   "devDependencies": {
     "@oclif/prettier-config": "^0.2.1",
     "@oclif/test": "^3",
@@ -39,24 +41,15 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/alonmota/ai-qa-bot",
   "license": "MIT",
   "main": "index.js",
-  "name": "@alonmota/ai-qa-bot",
   "oclif": {
     "bin": "bot",
     "dirname": "bot",
     "commands": "./dist/commands",
     "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
-    ],
-    "topicSeparator": " ",
-    "topics": {
-      "hello": {
-        "description": "Say hello to the world and others"
-      }
-    }
+      "@oclif/plugin-help"
+    ]
   },
   "repository": {
     "type": "git",
@@ -71,7 +64,6 @@
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif readme && git add README.md"
   },
-  "version": "0.0.0",
   "bugs": {
     "url": "https://github.com/alonmota/ai-qa-bot/issues"
   },

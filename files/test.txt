@@ -1,1 +1,4 @@
-The best anime character is lucianiso
+The purpose of this bot is to answer questions about documents.
+You can place all documents you want to query on a folder, and the bot will read all documents and reply using them as a reference
+If can select what is the folder with the resources by using the pathToFolder flag
+You can skip folder definition if your folder is called files on your current dir

@@ -1,4 +1,4 @@
-import {Args, Command} from '@oclif/core'
+import {Args, Command, Flags} from '@oclif/core'
 import { ChatOpenAI } from 'langchain/chat_models/openai'
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai';
 import { ChatPromptTemplate, HumanMessagePromptTemplate, SystemMessagePromptTemplate } from 'langchain/prompts';
@@ -15,12 +15,41 @@ import { getEnv } from '../../config/env/index.js'
 const fsp = fs.promises;
 const files_dir = "./files"
 
-export default class AskAi extends Command {
+export default class Ask extends Command {
   static args = {
     question: Args.string({description: 'Question', required: true}),
   }
 
-  static description = 'Answer questions'
+	static description = `
+Load a folder with the set of files you want to query upon, you can use pdf, txt, md or doc files.
+Than ask a question, the system will read all files in the folder and answer according to the content on them
+`
+
+  static examples = [
+    {
+      command: '<%= config.bin %> <%= command.id %> --help',
+      description: 'Display command options',
+    },
+		{
+      command: '<%= config.bin %> <%= command.id %> "QUESTION HERE"',
+      description: 'Make a question',
+    },
+		{
+      command: '<%= config.bin %> <%= command.id %> "What is the purpose of this cli?" -f="./files"',
+      description: 'Provide a path to a folder containing relevant files',
+    }
+  ]
+
+	static flags = {
+    pathToFolder: Flags.string({
+			char: 'f',
+			default: './files',
+			summary: 'Path to folder containing the documents',
+		}),
+  }
+
+  static summary = 'Answer questions about a set of documents'
+	static usage = 'ask-ai "What is the purpose of this cli tool?"'
 
   async readFiles(): Promise<string[]> {
     const data: string[] = [];
@@ -34,7 +63,7 @@ export default class AskAi extends Command {
 }
 
 	async run(): Promise<void> {
-    const {args} = await this.parse(AskAi)
+    const {args} = await this.parse(Ask)
 
 		const {openApiKey} = await getEnv()
 

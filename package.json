@@ -1,76 +1,76 @@
 {
 	"name": "@alonmota/ai-qa-bot",
-  "version": "0.0.0",
-  "description": "AI bot that answer questions about documents",
-  "author": "Alon Mota @alonmota",
-  "homepage": "https://github.com/alonmota/ai-qa-bot",
-  "bin": {
-    "bot": "bin/run.js"
-  },
-  "dependencies": {
-    "@oclif/core": "^3",
-    "@oclif/plugin-help": "^5",
-    "class-transformer-validator": "^0.9.1",
-    "class-validator": "^0.14.0",
-    "hnswlib-node": "^1.4.2",
-    "langchain": "^0.0.177"
-  },
-  "devDependencies": {
-    "@oclif/prettier-config": "^0.2.1",
-    "@oclif/test": "^3",
-    "@types/chai": "^4",
-    "@types/mocha": "^10",
-    "@types/node": "^18",
-    "chai": "^4",
-    "eslint": "^8",
-    "eslint-config-oclif": "^5",
-    "eslint-config-oclif-typescript": "^3",
-    "eslint-config-prettier": "^9.0.0",
-    "mocha": "^10",
-    "oclif": "^4.0.3",
-    "shx": "^0.3.4",
-    "ts-node": "^10.9.1",
-    "typescript": "^5"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "files": [
-    "/bin",
-    "/dist",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
-  ],
-  "license": "MIT",
-  "main": "index.js",
-  "oclif": {
-    "bin": "bot",
-    "dirname": "bot",
-    "commands": "./dist/commands",
-    "plugins": [
-      "@oclif/plugin-help"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alonmota/ai-qa-bot.git"
-  },
-  "scripts": {
-    "build": "shx rm -rf dist && tsc -b",
-    "lint": "eslint . --ext .ts",
-    "postpack": "shx rm -f oclif.manifest.json",
-    "posttest": "npm run lint",
-    "prepack": "npm run build && oclif manifest && oclif readme",
-    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif readme && git add README.md"
-  },
-  "bugs": {
-    "url": "https://github.com/alonmota/ai-qa-bot/issues"
-  },
-  "keywords": [
-    "oclif"
-  ],
-  "types": "dist/index.d.ts",
-  "exports": "./lib/index.js",
-  "type": "module"
+	"version": "0.0.1",
+	"description": "AI bot that answer questions about documents",
+	"author": "Alon Mota @alonmota",
+	"homepage": "https://github.com/alonmota/ai-qa-bot",
+	"bin": {
+		"bot": "bin/run.js"
+	},
+	"dependencies": {
+		"@oclif/core": "^3",
+		"@oclif/plugin-help": "^5",
+		"class-transformer-validator": "^0.9.1",
+		"class-validator": "^0.14.0",
+		"hnswlib-node": "^1.4.2",
+		"langchain": "^0.0.177"
+	},
+	"devDependencies": {
+		"@oclif/prettier-config": "^0.2.1",
+		"@oclif/test": "^3",
+		"@types/chai": "^4",
+		"@types/mocha": "^10",
+		"@types/node": "^18",
+		"chai": "^4",
+		"eslint": "^8",
+		"eslint-config-oclif": "^5",
+		"eslint-config-oclif-typescript": "^3",
+		"eslint-config-prettier": "^9.0.0",
+		"mocha": "^10",
+		"oclif": "^4.0.3",
+		"shx": "^0.3.4",
+		"ts-node": "^10.9.1",
+		"typescript": "^5"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"files": [
+		"/bin",
+		"/dist",
+		"/npm-shrinkwrap.json",
+		"/oclif.manifest.json"
+	],
+	"license": "MIT",
+	"main": "index.js",
+	"oclif": {
+		"bin": "bot",
+		"dirname": "bot",
+		"commands": "./dist/commands",
+		"plugins": [
+			"@oclif/plugin-help"
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alonmota/ai-qa-bot.git"
+	},
+	"scripts": {
+		"build": "shx rm -rf dist && tsc -b",
+		"lint": "eslint . --ext .ts",
+		"postpack": "shx rm -f oclif.manifest.json",
+		"posttest": "npm run lint",
+		"prepack": "npm run build && oclif manifest && oclif readme",
+		"test": "mocha --forbid-only \"test/**/*.test.ts\"",
+		"version": "oclif readme && git add README.md"
+	},
+	"bugs": {
+		"url": "https://github.com/alonmota/ai-qa-bot/issues"
+	},
+	"keywords": [
+		"oclif"
+	],
+	"types": "dist/index.d.ts",
+	"exports": "./lib/index.js",
+	"type": "module"
 }

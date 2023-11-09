@@ -18,7 +18,7 @@ $ npm install -g @alonmota/ai-qa-bot
 $ bot COMMAND
 running command...
 $ bot (--version)
-@alonmota/ai-qa-bot/0.0.0 linux-x64 node-v18.16.0
+@alonmota/ai-qa-bot/0.0.1 linux-x64 node-v18.16.0
 $ bot --help [COMMAND]
 USAGE
   $ bot COMMAND
@@ -66,7 +66,7 @@ EXAMPLES
     $ bot ask "What is the purpose of this cli?" -f="./files"
 ```
 
-_See code: [src/commands/ask/index.ts](https://github.com/alonmota/ai-qa-bot/blob/v0.0.0/src/commands/ask/index.ts)_
+_See code: [src/commands/ask/index.ts](https://github.com/alonmota/ai-qa-bot/blob/v0.0.1/src/commands/ask/index.ts)_
 
 ## `bot help [COMMANDS]`
 

@@ -13,7 +13,7 @@
 		"class-transformer-validator": "^0.9.1",
 		"class-validator": "^0.14.0",
 		"hnswlib-node": "^1.4.2",
-		"langchain": "^0.0.177"
+		"langchain": "^0.0.196"
 	},
 	"devDependencies": {
 		"@oclif/prettier-config": "^0.2.1",

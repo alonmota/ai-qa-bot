@@ -11,7 +11,7 @@
 		"@oclif/core": "^3",
 		"@oclif/plugin-help": "^5",
 		"class-transformer-validator": "^0.9.1",
-		"class-validator": "^0.14.0",
+		"class-validator": "^0.14.1",
 		"hnswlib-node": "^1.4.2",
 		"langchain": "^0.0.177"
 	},
